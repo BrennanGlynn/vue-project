@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <router-link to="/"><img src="./assets/logo.png"></router-link>
+    <br>
+    <button @click="goToNew">Go to new component</button>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    goToNew: function () {
+      this.$router.push({ path: 'new' })
+    }
+  }
 }
 </script>
 
