@@ -18,7 +18,7 @@ export default {
       console.log(this.value)
     },
     goTo: function (route) {
-      this.$router.push({ name: route })
+      this.$router.push({ name: route, params: { id: 'Brennan' } })
     }
   }
 }

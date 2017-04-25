@@ -5,7 +5,8 @@ import Hello from '@/components/Hello'
 Vue.use(Router)
 
 const NewComponent = {
-  template: `<div>Component</div>`
+  props: ['id'],
+  template: `<div>Component {{ id }}</div>`
 }
 
 const TwoComponent = {
@@ -24,9 +25,10 @@ export default new Router({
       }
     },
     {
-      path: '/new',
+      path: '/new/:id',
       name: 'NewComponent',
-      component: NewComponent
+      component: NewComponent,
+      props: true
     },
     {
       path: '/two',
