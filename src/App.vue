@@ -2,9 +2,11 @@
   <div id="app">
     <router-link to="/"><img src="./assets/logo.png"></router-link>
     <br>
-    <button @click="goTo('new')">Go to new component</button>
-    <button @click="goTo('two')">Go to two component</button>
+    <button @click="goTo('NewComponent')">Go to new component</button>
+    <button @click="goTo('TwoComponent')">Go to two component</button>
     <router-view></router-view>
+    <router-view class="new" name="new"></router-view>
+    <router-view class="two" name="two"></router-view>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ export default {
       console.log(this.value)
     },
     goTo: function (route) {
-      this.$router.push({ path: route })
+      this.$router.push({ name: route })
     }
   }
 }
