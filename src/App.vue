@@ -4,6 +4,7 @@
     <br>
     <button @click="goTo('NewComponent')">Go to new component</button>
     <button @click="goTo('TwoComponent')">Go to two component</button>
+    <button @click="goTo('Restricted')">Go to restricted component</button>
     <router-view></router-view>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
       console.log(this.value)
     },
     goTo: function (route) {
-      this.$router.push({ name: route, params: { id: 'brennan' } })
+      this.$router.push({ name: route })
     }
   }
 }
