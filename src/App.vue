@@ -2,24 +2,13 @@
   <div id="app">
     <router-link to="/"><img src="./assets/logo.png"></router-link>
     <br>
-    <button @click="goTo('NewComponent')">Go to new component</button>
-    <button @click="goTo('TwoComponent')">Go to two component</button>
-    <button @click="goTo('Restricted')">Go to restricted component</button>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  methods: {
-    describe: function () {
-      console.log(this.value)
-    },
-    goTo: function (route) {
-      this.$router.push({ name: route })
-    }
-  }
+  name: 'app'
 }
 </script>
 

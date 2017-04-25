@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="counter">
     <h1>{{ msg }}</h1>
+    <h1>{{ count }}</h1>
+    <button @click="increment">Add</button>
   </div>
 </template>
 
@@ -9,7 +11,13 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      count: 0
+    }
+  },
+  methods: {
+    increment () {
+      this.count++
     }
   }
 }
