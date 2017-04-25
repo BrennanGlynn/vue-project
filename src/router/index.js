@@ -13,7 +13,12 @@ const TwoComponent = {
   template: `<div>Two</div>`
 }
 
+const NotFoundComponent = {
+  template: `<div><h1>404</h1><br/>You dun' messed up!</div>`
+}
+
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -34,6 +39,10 @@ export default new Router({
       path: '/two',
       name: 'TwoComponent',
       component: TwoComponent
+    },
+    {
+      path: '*',
+      component: NotFoundComponent
     }
   ]
 })
