@@ -6,10 +6,14 @@ export default {
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
      </p>
+     {{ getter }}
     </div>`,
   computed: {
     count () {
       return this.$store.state.count
+    },
+    getter () {
+      return this.$store.getters.getter
     }
   },
   methods: {
