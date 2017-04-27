@@ -1,8 +1,6 @@
 import Vue from 'vue'
-
 import Router from 'vue-router'
-
-import Child from '../components/Child'
+import Counter from '../components/Counter'
 
 Vue.use(Router)
 
@@ -13,7 +11,7 @@ const router = new Router({
       path: '/',
       name: 'Home',
       components: {
-        default: Child
+        default: Counter
       }
     }
   ]
