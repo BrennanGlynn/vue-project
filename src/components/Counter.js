@@ -1,4 +1,4 @@
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   template: `
@@ -29,12 +29,10 @@ export default {
     ])
   },
   methods: {
-    increment () {
-      this.$store.commit('increment')
-    },
-    decrement () {
-      this.$store.commit('decrement')
-    }
+    ...mapMutations([
+      'increment',
+      'decrement'
+    ])
   },
   data: function () {
     return {

@@ -14,7 +14,7 @@ export default new Vuex.Store({
     squared: (state, getters) => {
       return getters.double * 2
     },
-    multiply: state => (x) => state.count * x
+    multiply: state => x => state.count * x
   },
   mutations: {
     increment: state => state.count++,
