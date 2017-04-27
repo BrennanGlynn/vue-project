@@ -8,8 +8,11 @@ export default new Vuex.Store({
     count: 0
   },
   getters: {
-    getter: state => {
-      return 'This a getter that reacts to the current state. Count = ' + state.count
+    double: state => {
+      return state.count * 2
+    },
+    squared: (state, getters) => {
+      return getters.double * 2
     }
   },
   mutations: {
