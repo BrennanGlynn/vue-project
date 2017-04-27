@@ -1,3 +1,5 @@
+import { mapGetters } from 'vuex'
+
 export default {
   template: `
     <div>
@@ -14,21 +16,17 @@ export default {
      <h2>Multiplied by:</h2>
      <input v-model="variable" type="number">
      <br>
-     {{ multiply }}
+     {{ multiply(variable) }}
     </div>`,
   computed: {
     count () {
       return this.$store.state.count
     },
-    double () {
-      return this.$store.getters.double
-    },
-    squared () {
-      return this.$store.getters.squared
-    },
-    multiply () {
-      return this.$store.getters.multiply(this.variable)
-    }
+    ...mapGetters([
+      'double',
+      'squared',
+      'multiply'
+    ])
   },
   methods: {
     increment () {
