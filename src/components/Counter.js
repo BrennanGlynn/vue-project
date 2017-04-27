@@ -11,6 +11,10 @@ export default {
      <p>{{ double }}</p>
      <h2>Count Squared</h2>
      <p>{{ squared }}</p>
+     <h2>Multiplied by:</h2>
+     <input v-model="variable" type="number">
+     <br>
+     {{ multiply }}
     </div>`,
   computed: {
     count () {
@@ -21,6 +25,9 @@ export default {
     },
     squared () {
       return this.$store.getters.squared
+    },
+    multiply () {
+      return this.$store.getters.multiply(this.variable)
     }
   },
   methods: {
@@ -29,6 +36,11 @@ export default {
     },
     decrement () {
       this.$store.commit('decrement')
+    }
+  },
+  data: function () {
+    return {
+      variable: ''
     }
   }
 }
