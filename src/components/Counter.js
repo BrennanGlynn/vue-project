@@ -1,4 +1,4 @@
-import { mapGetters, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   template: `
@@ -19,19 +19,27 @@ export default {
      {{ multiply(variable) }}
      <h2>State of module A</h2>
      {{ countOfA }}
+     <h2>State of module B</h2>
+     {{ countOfB }}
      <h2>moduleA count + rootState count</h2>
-     {{ sumOfBoth }}
+     {{ aWithRoot }}
+     <h2>moduleB count + rootState count</h2>
+     {{ bWithRoot }}
+     <h2>a + b + rootState</h2>
+     {{ count + countOfA + countOfB }}
     </div>`,
   computed: {
-    count () {
-      return this.$store.state.count
-    },
+    ...mapState([
+      'count'
+    ]),
     ...mapGetters([
       'double',
       'doubleSquared',
       'multiply',
       'countOfA',
-      'sumOfBoth'
+      'countOfB',
+      'aWithRoot',
+      'bWithRoot'
     ])
   },
   methods: {

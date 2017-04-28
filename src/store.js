@@ -9,7 +9,7 @@ const moduleA = {
   },
   getters: {
     countOfA: state => state.count,
-    sumOfBoth (state, getters, rootState) {
+    aWithRoot (state, getters, rootState) {
       return state.count + rootState.count
     }
   }
@@ -18,7 +18,17 @@ const moduleA = {
 const moduleB = {
   state: {
     count: 0
+  },
+  getters: {
+    countOfB: state => state.count,
+    bWithRoot (state, getters, rootState) {
+      return state.count + rootState.count
+    }
+  },
+  mutations: {
+    increment: state => state.count++
   }
+
 }
 
 export default new Vuex.Store({
