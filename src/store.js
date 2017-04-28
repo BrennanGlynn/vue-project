@@ -8,7 +8,7 @@ const moduleA = {
     count: 100
   },
   getters: {
-    countOfB: state => state.count,
+    countOfA: state => state.count,
     sumOfBoth (state, getters, rootState) {
       return state.count + rootState.count
     }

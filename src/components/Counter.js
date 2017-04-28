@@ -18,19 +18,20 @@ export default {
      <br>
      {{ multiply(variable) }}
      <h2>State of module A</h2>
-     {{ moduleACount }}
+     {{ countOfA }}
+     <h2>moduleA count + rootState count</h2>
+     {{ sumOfBoth }}
     </div>`,
   computed: {
     count () {
       return this.$store.state.count
     },
-    moduleACount () {
-      return this.$store.state.a.count
-    },
     ...mapGetters([
       'double',
       'doubleSquared',
-      'multiply'
+      'multiply',
+      'countOfA',
+      'sumOfBoth'
     ])
   },
   methods: {
