@@ -3,9 +3,24 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const moduleA = {
+  state: {
+    count: 100
+  }
+}
+
+const moduleB = {
   state: {
     count: 0
+  },
+  mutations: {
+    increment: state => state.count++,
+    decrement: state => state.count--
+  },
+  actions: {
+    increment (context) {
+      context.commit('increment')
+    }
   },
   getters: {
     double: state => {
@@ -15,9 +30,12 @@ export default new Vuex.Store({
       return getters.double * 2
     },
     multiply: state => x => state.count * x
-  },
-  mutations: {
-    increment: state => state.count++,
-    decrement: state => state.count--
+  }
+}
+
+export default new Vuex.Store({
+  modules: {
+    a: moduleA,
+    b: moduleB
   }
 })

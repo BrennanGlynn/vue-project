@@ -17,10 +17,15 @@ export default {
      <input v-model="variable" type="number">
      <br>
      {{ multiply(variable) }}
+     <h2>State of module A</h2>
+     {{ moduleACount }}
     </div>`,
   computed: {
     count () {
-      return this.$store.state.count
+      return this.$store.state.b.count
+    },
+    moduleACount () {
+      return this.$store.state.a.count
     },
     ...mapGetters([
       'double',
