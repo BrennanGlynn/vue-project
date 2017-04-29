@@ -17,15 +17,15 @@ export default {
      <input v-model="variable" type="number">
      <br>
      {{ multiply(variable) }}
-     <h2>State of module A</h2>
+     <h3>State of module A</h3>
      {{ countOfA }}
-     <h2>State of module B</h2>
+     <h3>State of module B</h3>
      {{ countOfB }}
-     <h2>moduleA count + rootState count</h2>
+     <h3>moduleA count + rootState count</h3>
      {{ aWithRoot }}
-     <h2>moduleB count + rootState count</h2>
+     <h3>moduleB count + rootState count</h3>
      {{ bWithRoot }}
-     <h2>a + b + rootState</h2>
+     <h3>a + b + rootState</h3>
      {{ count + countOfA + countOfB }}
     </div>`,
   computed: {

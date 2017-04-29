@@ -16,6 +16,7 @@ const moduleA = {
 }
 
 const moduleB = {
+  nameSpaced: true,
   state: {
     count: 0
   },
